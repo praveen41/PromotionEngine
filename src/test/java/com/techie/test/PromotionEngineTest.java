@@ -48,21 +48,18 @@ public class PromotionEngineTest {
 		engine.addPromotions(promotionB);
 		engine.addPromotions(promotionC);
 
-
 	}
 
 	@Test
-	public void calculateSKUCartTestCase1() {
+	public void calculateSKUCartWithFixed() {
 
 		Order order = new Order();
 		order.addItem(items.get("A"), 3);
-		order.addItem(items.get("B"), 5);
+		order.addItem(items.get("B"), 2);
 		order.addItem(items.get("C"), 1);
-		order.addItem(items.get("D"), 1);
-
 		double totalPrice = engine.calculateTotalPrice(order);
 
-		Assert.assertEquals(280, totalPrice, 0);
+		Assert.assertEquals(195, totalPrice, 0);
 
 	}
 

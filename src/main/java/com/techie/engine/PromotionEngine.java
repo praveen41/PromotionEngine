@@ -22,7 +22,17 @@ public class PromotionEngine {
 	}
 
 	public double calculateTotalPrice(Order order) {
-		return 280;
+		double discountedAmount = calculateDiscount(order);
+
+		double totalAmount = order.getItems().entrySet().stream()
+				.mapToDouble(p -> p.getKey().getUnitPrice() * p.getValue()).sum();
+
+		return totalAmount - discountedAmount;
+
+	}
+
+	private double calculateDiscount(Order order) {
+		return promotions.stream().mapToDouble(p -> p.calculateDiscount(order)).sum();
 	}
 
 	public void addPromotions(Promotion promotion) {

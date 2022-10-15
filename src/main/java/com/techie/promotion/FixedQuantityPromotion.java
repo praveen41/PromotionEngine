@@ -25,7 +25,17 @@ public class FixedQuantityPromotion implements Promotion {
 
 	@Override
 	public double calculateDiscount(Order order) {
-		return 0;
+		double discount = 0;
+
+		Integer quantity = order.getItems().get(sku);
+		if (quantity != null && quantity >= minQuantity) {
+			double totalPrice = sku.getUnitPrice() * quantity;
+			double discountedPrice = ((quantity / minQuantity) * promotionPrice)
+					+ ((quantity % minQuantity) * sku.getUnitPrice());
+			return totalPrice - discountedPrice;
+		}
+
+		return discount;
 	}
 
 }
