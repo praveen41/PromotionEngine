@@ -62,5 +62,18 @@ public class PromotionEngineTest {
 		Assert.assertEquals(195, totalPrice, 0);
 
 	}
+	
+	@Test
+	public void calculateSKUCartWithFixedWithMultipleSKU() {
+
+		Order order = new Order();
+		order.addItem(items.get("A"), 5);
+		order.addItem(items.get("B"), 5);
+		order.addItem(items.get("C"), 1);
+		double totalPrice = engine.calculateTotalPrice(order);
+
+		Assert.assertEquals(370, totalPrice, 0);
+
+	}
 
 }
