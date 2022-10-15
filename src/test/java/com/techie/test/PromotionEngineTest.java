@@ -13,6 +13,9 @@ import org.junit.Test;
 import com.techie.engine.PromotionEngine;
 import com.techie.model.Order;
 import com.techie.model.SKU;
+import com.techie.promotion.CombinationPromotion;
+import com.techie.promotion.FixedQuantityPromotion;
+import com.techie.promotion.Promotion;
 
 /**
  * @author Praveen
@@ -36,7 +39,15 @@ public class PromotionEngineTest {
 		items.put("C", C);
 		items.put("D", D);
 
+		Promotion promotionA = new FixedQuantityPromotion();
+		Promotion promotionB = new FixedQuantityPromotion();
+		Promotion promotionCAndD = new CombinationPromotion();
+
 		engine = new PromotionEngine();
+		engine.addPromotions(promotionA);
+		engine.addPromotions(promotionB);
+		engine.addPromotions(promotionCAndD);
+
 
 	}
 
