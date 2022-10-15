@@ -39,14 +39,14 @@ public class PromotionEngineTest {
 		items.put("C", C);
 		items.put("D", D);
 
-		Promotion promotionA = new FixedQuantityPromotion();
-		Promotion promotionB = new FixedQuantityPromotion();
-		Promotion promotionCAndD = new CombinationPromotion();
+		Promotion promotionA = new FixedQuantityPromotion(A, 3, 130);
+		Promotion promotionB = new FixedQuantityPromotion(B, 2, 45);
+		Promotion promotionC = new CombinationPromotion(C, D, 30);
 
 		engine = new PromotionEngine();
 		engine.addPromotions(promotionA);
 		engine.addPromotions(promotionB);
-		engine.addPromotions(promotionCAndD);
+		engine.addPromotions(promotionC);
 
 
 	}
