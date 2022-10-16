@@ -9,6 +9,8 @@ import com.techie.model.SKU;
 /**
  * @author Praveen
  *
+ *         This class is responsible for calculating the discount on Fixed
+ *         Quantity SKU.
  */
 public class FixedQuantityPromotion implements Promotion {
 

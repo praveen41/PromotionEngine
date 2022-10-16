@@ -10,7 +10,10 @@ import com.techie.model.SKU;
 
 /**
  * @author Praveen
- *
+ * 
+ * This class is responsible for calculating the discount on Combination of different SKU
+ *         Quantity SKU.
+ 
  */
 public class CombinationPromotion implements Promotion {
 

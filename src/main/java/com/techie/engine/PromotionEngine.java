@@ -12,6 +12,8 @@ import com.techie.promotion.Promotion;
 /**
  * @author Praveen
  *
+ *         This is engine of the application used to interact with different
+ *         promotion and calculate cart value
  */
 public class PromotionEngine {
 
